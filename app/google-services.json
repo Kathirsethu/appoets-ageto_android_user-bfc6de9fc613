@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "643370526934",
+    "firebase_url": "https://hcr-rider-default-rtdb.firebaseio.com",
+    "project_id": "hcr-rider",
+    "storage_bucket": "hcr-rider.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:643370526934:android:478b19152f3d315a384177",
+        "android_client_info": {
+          "package_name": "com.healthcareride.user"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "643370526934-c9mlplrobs0i7dpnptmhtfd43c42chsd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.healthcareride.user",
+            "certificate_hash": "314a251b94836b005acf10ba5647559d5d013f08"
+          }
+        },
+        {
+          "client_id": "643370526934-srv27jmu66d1a5gohor99nt4g27qqagn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.healthcareride.user",
+            "certificate_hash": "10b8d31cd36eee8a17fdf3384a9bf75531b7918d"
+          }
+        },
+        {
+          "client_id": "643370526934-0rjbcnurshurkbinpedmg96bbaot8d4m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJgegbgYf4oU8eB96aFZaiSSgqWc-O90U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "643370526934-0rjbcnurshurkbinpedmg96bbaot8d4m.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "643370526934-a3773qln4e497aftcsjbg1c502qsd2so.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.healthcare.user"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

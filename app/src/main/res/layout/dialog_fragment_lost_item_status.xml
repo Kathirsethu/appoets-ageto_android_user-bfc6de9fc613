@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/_30sdp"
+        tools:targetApi="lollipop">
+
+        <ImageView
+            android:id="@+id/ivSupportCall"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:contentDescription="@string/support_call"
+            android:visibility="visible"
+            app:srcCompat="@drawable/ic_call" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/clanpro_medium"
+            android:gravity="center"
+            android:padding="16dp"
+            android:text="@string/lost_item"
+            android:textColor="@color/colorPrimaryText"
+            android:textSize="@dimen/text_18" />
+
+    </androidx.cardview.widget.CardView>
+
+    <!--Reuse this layout once it's dynamic-->
+    <LinearLayout
+        android:id="@+id/llUserDisputeComment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!--don't change src to srcComapat will not show stub or default image-->
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/user_picture"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:layout_gravity="center"
+            android:layout_margin="12dp"
+            android:src="@drawable/ic_user_placeholder" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/clanpro_medium"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="You"
+                android:textColor="@color/colorPrimaryText"
+                android:textSize="@dimen/text_14"
+                tools:text="You" />
+
+            <TextView
+                android:id="@+id/user_dispute"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="@font/clanpro_medium"
+                android:gravity="start"
+                android:maxLines="3"
+                android:paddingStart="10dp"
+                android:paddingBottom="10dp"
+                android:textColor="@color/colorSecondaryText"
+                android:textSize="@dimen/text_14"
+                tools:text="comments" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/lost_item_status"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/_10sdp"
+            android:background="@drawable/button_round_status_closed"
+            android:fontFamily="@font/clanpro_medium"
+            android:gravity="center"
+            android:textColor="@color/crimson"
+            android:textSize="@dimen/text_14"
+            tools:text="Closed" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llAdminComments"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/clanpro_medium"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="Admin"
+                android:textColor="@color/colorPrimaryText"
+                android:textSize="@dimen/text_14"
+                tools:text="Admin" />
+
+            <TextView
+                android:id="@+id/admin_comment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="@font/clanpro_medium"
+                android:gravity="end"
+                android:maxLines="3"
+                android:paddingStart="10dp"
+                android:paddingBottom="10dp"
+                android:textColor="@color/colorSecondaryText"
+                android:textSize="@dimen/text_14"
+                tools:text="comments" />
+        </LinearLayout>
+
+        <!--don't change src to srcComapat will not show stub or default image-->
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/admin_picture"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:layout_gravity="center"
+            android:layout_margin="12dp"
+            android:src="@drawable/ic_user_placeholder" />
+    </LinearLayout>
+</LinearLayout>

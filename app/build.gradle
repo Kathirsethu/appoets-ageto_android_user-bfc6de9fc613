@@ -1,0 +1,142 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
+
+android {
+    signingConfigs {
+        release {
+            keyAlias 'healthcareride_android_user'
+            keyPassword 'healthcareride_android_user'
+            storeFile file('jks/healthcareride_android_user.jks')
+            storePassword 'healthcareride_android_user'
+        }
+    }
+    compileSdkVersion 29
+    defaultConfig {
+        applicationId "com.healthcareride"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+        applicationIdSuffix '.user'
+        resConfigs "en", "ar"
+        vectorDrawables.useSupportLibrary = true
+
+        resValue "string", "app_name", "HCR RIDER"
+        resValue "string", "google_map_key", "AIzaSyCJgegbgYf4oU8eB96aFZaiSSgqWc-O90U"
+        resValue "string", "google_directions_key", "AIzaSyCJgegbgYf4oU8eB96aFZaiSSgqWc-O90U"
+        resValue "string", "FACEBOOK_APP_ID", "851369175224340"
+        resValue "string", "ACCOUNT_KIT_CLIENT_TOKEN", "9eba15db8381a492902d4eb66612d102"
+        resValue "string", "default_notification_channel_id", "fcm_default_channel"
+        resValue "string", "google_signin_server_client_id", "643370526934-0rjbcnurshurkbinpedmg96bbaot8d4m.apps.googleusercontent.com"
+
+        buildConfigField "String", "BASE_URL", '"https://healthcareride.net/"'
+        buildConfigField "String", "BASE_IMAGE_URL", '"https://healthcareride.net/storage/"'
+        buildConfigField "String", "TERMS_CONDITIONS", '"https://healthcareride.net/terms"'
+
+        buildConfigField "String", "DRIVER_PACKAGE", '"com.healthcareride.partner"'
+        buildConfigField "String", "CLIENT_SECRET", '"26C2ZKfDX13gRlM3moOmLmbl9BjdG7vnXkwM19MK"'
+        buildConfigField "String", "CLIENT_ID", '"2"'
+        buildConfigField "String", "DEVICE_TYPE", '"android"'
+        buildConfigField "String", "PAYPAL_CLIENT_TOKEN", '"eyJ2ZXJzaW9uIjoyLCJhdXRob3JpemF0aW9uRmluZ2VycHJpbnQiOiJlMWMzMGE4YmJlZmZlODk4MDJlMmY2ZGM5MzE4NjE1ZmJmZDQ4YWFjMTc3Y2ZkN2YxZjE4MDc1YjMzMzFkYmQ2fGNyZWF0ZWRfYXQ9MjAxOC0wOC0wN1QwNjo0MDoxMS4zNjI0Nzg4MzIrMDAwMFx1MDAyNm1lcmNoYW50X2lkPTM0OHBrOWNnZjNiZ3l3MmJcdTAwMjZwdWJsaWNfa2V5PTJuMjQ3ZHY4OWJxOXZtcHIiLCJjb25maWdVcmwiOiJodHRwczovL2FwaS5zYW5kYm94LmJyYWludHJlZWdhdGV3YXkuY29tOjQ0My9tZXJjaGFudHMvMzQ4cGs5Y2dmM2JneXcyYi9jbGllbnRfYXBpL3YxL2NvbmZpZ3VyYXRpb24iLCJjaGFsbGVuZ2VzIjpbXSwiZW52aXJvbm1lbnQiOiJzYW5kYm94IiwiY2xpZW50QXBpVXJsIjoiaHR0cHM6Ly9hcGkuc2FuZGJveC5icmFpbnRyZWVnYXRld2F5LmNvbTo0NDMvbWVyY2hhbnRzLzM0OHBrOWNnZjNiZ3l3MmIvY2xpZW50X2FwaSIsImFzc2V0c1VybCI6Imh0dHBzOi8vYXNzZXRzLmJyYWludHJlZWdhdGV3YXkuY29tIiwiYXV0aFVybCI6Imh0dHBzOi8vYXV0aC52ZW5tby5zYW5kYm94LmJyYWludHJlZWdhdGV3YXkuY29tIiwiYW5hbHl0aWNzIjp7InVybCI6Imh0dHBzOi8vb3JpZ2luLWFuYWx5dGljcy1zYW5kLnNhbmRib3guYnJhaW50cmVlLWFwaS5jb20vMzQ4cGs5Y2dmM2JneXcyYiJ9LCJ0aHJlZURTZWN1cmVFbmFibGVkIjp0cnVlLCJwYXlwYWxFbmFibGVkIjp0cnVlLCJwYXlwYWwiOnsiZGlzcGxheU5hbWUiOiJBY21lIFdpZGdldHMsIEx0ZC4gKFNhbmRib3gpIiwiY2xpZW50SWQiOm51bGwsInByaXZhY3lVcmwiOiJodHRwOi8vZXhhbXBsZS5jb20vcHAiLCJ1c2VyQWdyZWVtZW50VXJsIjoiaHR0cDovL2V4YW1wbGUuY29tL3RvcyIsImJhc2VVcmwiOiJodHRwczovL2Fzc2V0cy5icmFpbnRyZWVnYXRld2F5LmNvbSIsImFzc2V0c1VybCI6Imh0dHBzOi8vY2hlY2tvdXQucGF5cGFsLmNvbSIsImRpcmVjdEJhc2VVcmwiOm51bGwsImFsbG93SHR0cCI6dHJ1ZSwiZW52aXJvbm1lbnROb05ldHdvcmsiOnRydWUsImVudmlyb25tZW50Ijoib2ZmbGluZSIsInVudmV0dGVkTWVyY2hhbnQiOmZhbHNlLCJicmFpbnRyZWVDbGllbnRJZCI6Im1hc3RlcmNsaWVudDMiLCJiaWxsaW5nQWdyZWVtZW50c0VuYWJsZWQiOnRydWUsIm1lcmNoYW50QWNjb3VudElkIjoiYWNtZXdpZGdldHNsdGRzYW5kYm94IiwiY3VycmVuY3lJc29Db2RlIjoiVVNEIn0sIm1lcmNoYW50SWQiOiIzNDhwazljZ2YzYmd5dzJiIiwidmVubW8iOiJvZmYifQ=="'
+
+    }
+    buildTypes {
+
+        debug {
+            manifestPlaceholders = [crashlyticsEnabled: false]
+        }
+
+        release {
+            manifestPlaceholders = [crashlyticsEnabled: true]
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+    android.applicationVariants.all { variant ->
+        variant.outputs.all {
+            outputFileName = "${variant.applicationId}_V${variant.versionCode}_VN-${variant.versionName}_" + new Date().format('yyyy-MM-dd') + ".apk"
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.multidex:multidex:2.0.0'
+    //      Fire Base
+    implementation 'com.firebase:firebase-jobdispatcher:0.8.5'
+    implementation 'com.google.firebase:firebase-messaging:17.6.0'
+    implementation 'com.google.firebase:firebase-database:16.1.0'
+
+    //Firebase Crash Reporting
+    implementation 'com.google.firebase:firebase-crash:16.2.1'
+    implementation 'com.google.firebase:firebase-auth:16.2.1'
+    implementation 'com.google.firebase:firebase-analytics:16.4.0'
+    implementation 'com.google.firebase:firebase-core:16.0.8'
+    implementation 'com.crashlytics.sdk.android:crashlytics:2.9.9'
+
+    //      Facebook
+    implementation 'com.facebook.android:facebook-login:4.39.0'
+    implementation 'com.facebook.android:account-kit-sdk:4.39.0'
+    implementation 'com.google.maps.android:android-maps-utils:0.5'
+    implementation 'com.google.android.gms:play-services-maps:16.1.0'
+    implementation 'com.google.android.gms:play-services-location:16.0.0'
+    // New Places SDK Client for Android
+    implementation 'com.google.android.libraries.places:places:1.0.0'
+    implementation 'com.google.android.gms:play-services-auth:16.0.1'
+    //      Rx
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.3'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
+    //      Networking (Retrofit)
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.4.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.11.0'
+    implementation 'com.squareup.okhttp3:okhttp:3.11.0'
+    //      DI (Butter knife)
+    implementation 'com.jakewharton:butterknife:10.2.3'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.3'
+    //      Image processing (Glide, Lottie, circular image & Image picker)
+    implementation 'com.github.bumptech.glide:glide:4.8.0'
+    implementation 'de.hdodenhof:circleimageview:2.2.0'
+    implementation 'com.airbnb.android:lottie:2.7.0'
+    implementation 'com.github.jkwiecien:EasyImage:2.0.4'
+    //      Others
+    implementation 'com.akexorcist:googledirectionlibrary:1.1.1'
+    implementation 'me.himanshusoni.chatmessageview:chat-message-view:1.0.3'
+    /*      dimen       */
+    implementation 'com.intuit.sdp:sdp-android:1.0.5'
+    implementation 'com.intuit.ssp:ssp-android:1.0.5'
+    //      Car Animation in Rate card
+    implementation 'com.daimajia.easing:library:2.0@aar'
+    implementation 'com.daimajia.androidanimations:library:2.3@aar'
+    // comment below line & its relative code in files, if you face issue while generate signed apk.
+    implementation 'com.facebook.stetho:stetho-okhttp3:1.5.0'
+    //      payment gateway...
+    implementation 'com.braintreepayments:card-form:3.5.0'
+    implementation 'com.braintreepayments.api:braintree:2.18.1'
+    implementation 'com.braintreepayments.api:drop-in:3.7.1'
+    implementation 'com.stripe:stripe-android:8.0.0'
+    /*      toasty      */
+    implementation 'com.github.GrenderG:Toasty:1.3.1'
+    implementation 'id.zelory:compressor:2.1.0'
+    // Page Indicator using Recycler view
+    implementation 'com.ryanjeffreybrooks:indefinitepagerindicator:1.0.9'
+    implementation project(':stripepayment')
+    implementation project(':paytmpayment')
+}
